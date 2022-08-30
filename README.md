@@ -1,4 +1,4 @@
-In this application, I got the values showing the air quality according to the city names from https://api.ambeedata.com/ using Alamofire. I then saved these values to the core data.
+In this application, I got the values showing the air quality according to the city names from https://api.ambeedata.com/ using Alamofire. I then saved these values to the core data.I used the MVVM design pattern.
 
 HOME PAGE :
 
