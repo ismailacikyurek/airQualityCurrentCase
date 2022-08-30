@@ -5,8 +5,7 @@
 //  Created by İSMAİL AÇIKYÜREK on 21.08.2022.
 //
 
-import UIKit
-import Alamofire
+import UIKit 
 import CoreData
 
 class DetailsViewController: UIViewController {

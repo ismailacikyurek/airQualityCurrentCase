@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 import Alamofire
 // MARK: Protokols
 protocol MainAirQualityViewModelProtocol {
@@ -48,5 +47,3 @@ class MainAirQualityViewModel:NSObject, MainAirQualityViewModelProtocol {
         }
     }
 }
-
-

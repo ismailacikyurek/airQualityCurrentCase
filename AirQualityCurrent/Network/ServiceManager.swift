@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+
 struct ServiceManager {
     let urlCity = "https://api.ambeedata.com/latest/by-city?city="
     let urlAllCity = "https://api.ambeedata.com/latest/by-country-code?countryCode=US"

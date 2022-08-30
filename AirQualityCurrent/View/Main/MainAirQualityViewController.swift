@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Alamofire
+
 
 class MainAirQualityViewController: UIViewController {
     // MARK: Properties
@@ -35,7 +35,7 @@ class MainAirQualityViewController: UIViewController {
             self?.tableView.reloadData()
             }
     }
-    
+
     func searchBarProperties() {
         searchbar.setImage(UIImage(), for: .search, state: .normal)
         searchbar.delegate = self
