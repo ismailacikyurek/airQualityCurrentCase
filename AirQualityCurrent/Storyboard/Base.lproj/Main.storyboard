@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="agl-r1-3FF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Air Quality View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainAirQualityViewController" customModule="AirQualityCurrent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PSF-Jj-TgB">
+                                <rect key="frame" x="20" y="210" width="374" height="140"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="5Q0-cz-sBx"/>
+                                    <constraint firstAttribute="height" constant="140" id="uSR-Kr-ZFK"/>
+                                </constraints>
+                                <searchBar key="tableHeaderView" contentMode="redraw" translucent="NO" id="Z77-pS-gC6">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="barTintColor" systemColor="systemGray3Color"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <scopeButtonTitles>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                    </scopeButtonTitles>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wsE-jl-W6R">
+                                        <rect key="frame" x="0.0" y="95.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wsE-jl-W6R" id="KWb-nM-beE">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="VOY-5O-VZw"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rxW-Tk-ayb"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AIR QUALITY TODAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqU-LM-zFL">
+                                <rect key="frame" x="20" y="164" width="374" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="Hpy-Fr-6Oy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="XMN-wW-Kg1">
+                                <rect key="frame" x="155" y="255" width="78" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MqU-LM-zFL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GwO-fM-QKB"/>
+                            <constraint firstItem="PSF-Jj-TgB" firstAttribute="top" secondItem="MqU-LM-zFL" secondAttribute="bottom" constant="20" id="Ju5-L3-6M2"/>
+                            <constraint firstItem="PSF-Jj-TgB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KM5-CG-Exc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MqU-LM-zFL" secondAttribute="trailing" constant="20" id="U0X-3T-BPX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PSF-Jj-TgB" secondAttribute="trailing" constant="20" id="VQV-VW-WtO"/>
+                            <constraint firstItem="MqU-LM-zFL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="rsw-LL-dRO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YCT-GS-OoS">
+                        <barButtonItem key="backBarButtonItem" title=" " id="hSM-aW-WCf"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityView" destination="XMN-wW-Kg1" id="Fig-ga-zv8"/>
+                        <outlet property="searchbar" destination="Z77-pS-gC6" id="6y5-2d-whL"/>
+                        <outlet property="tableView" destination="PSF-Jj-TgB" id="OBJ-bZ-H4d"/>
+                        <segue destination="dk4-vw-Q7o" kind="show" identifier="goToDetails" id="Uuu-kt-Gxm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="98.4375"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="CAK-gl-NtX">
+            <objects>
+                <viewController id="dk4-vw-Q7o" customClass="DetailsViewController" customModule="AirQualityCurrent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gWV-lD-XKC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AIR QUALITY AİR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJV-bn-1Da">
+                                <rect key="frame" x="25" y="125" width="364" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="3YQ-6c-Euu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tz-cy-65V">
+                                <rect key="frame" x="25" y="186" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="57e-cC-jmc"/>
+                                    <constraint firstAttribute="width" constant="150" id="BUY-Pv-Ejr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dhaka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCP-Z1-yWW">
+                                <rect key="frame" x="195" y="186" width="194" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KAz-CR-jej"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5Z-qA-qjC">
+                                <rect key="frame" x="25" y="222" width="39" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HRQ-8E-JxA"/>
+                                    <constraint firstAttribute="width" constant="39" id="JCC-bX-RIZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today 01 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-yU-Ags">
+                                <rect key="frame" x="195" y="222" width="194" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="nO4-gY-KRO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="wRi-BG-2eZ">
+                                <rect key="frame" x="25" y="283" width="364" height="16.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1f-nx-l79">
+                                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xla-kV-VUv">
+                                        <rect key="frame" x="339.5" y="0.0" width="24.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="98z-RD-b5F">
+                                <rect key="frame" x="25" y="309.5" width="364" height="16.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="NO2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lH-VO-FSf">
+                                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-C0-m1e">
+                                        <rect key="frame" x="339.5" y="0.0" width="24.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="k22-aU-eDg">
+                                <rect key="frame" x="25" y="336" width="364" height="16.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="OZONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi7-qb-e5C">
+                                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uf-Th-N5P">
+                                        <rect key="frame" x="339.5" y="0.0" width="24.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="ouZ-5R-6eu">
+                                <rect key="frame" x="25" y="362.5" width="364" height="16.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="PM10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZD-oE-M7m">
+                                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gts-a9-O90">
+                                        <rect key="frame" x="339.5" y="0.0" width="24.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="Oh8-as-PpS">
+                                <rect key="frame" x="25" y="389" width="364" height="16.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="PM25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeD-H4-sCh">
+                                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-yi-tqD">
+                                        <rect key="frame" x="339.5" y="0.0" width="24.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="cSl-do-siR">
+                                <rect key="frame" x="25" y="415.5" width="364" height="16.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="SO2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kml-5c-myE">
+                                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlh-nM-PCg">
+                                        <rect key="frame" x="339.5" y="0.0" width="24.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IeA-Et-xcQ">
+                                <rect key="frame" x="0.0" y="503" width="414" height="233"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="233" id="zdF-dX-xHp"/>
+                                </constraints>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="97" id="rPk-XQ-Yd5" customClass="PreviosTableViewCell" customModule="AirQualityCurrent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="97"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rPk-XQ-Yd5" id="gx1-hn-B9h">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIZ-oz-3za">
+                                                    <rect key="frame" x="25" y="5" width="364" height="87"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJL-hs-16e">
+                                                            <rect key="frame" x="8" y="8" width="134" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="Bxz-wn-W8f"/>
+                                                                <constraint firstAttribute="width" constant="134" id="Esz-uo-dRB"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fk-nn-Otq">
+                                                            <rect key="frame" x="8" y="58" width="134" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="Dp1-U4-XAX"/>
+                                                                <constraint firstAttribute="width" constant="134" id="Qsv-iq-tDa"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpT-cG-evm">
+                                                            <rect key="frame" x="222" y="7" width="134" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="134" id="jJp-TJ-IXt"/>
+                                                                <constraint firstAttribute="height" constant="21" id="ueR-AQ-BYr"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGI-NZ-DWd">
+                                                            <rect key="frame" x="156" y="57" width="200" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="3gM-lF-k8z"/>
+                                                                <constraint firstAttribute="width" constant="200" id="Ym9-TG-dfA"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="dJL-hs-16e" firstAttribute="leading" secondItem="MIZ-oz-3za" secondAttribute="leading" constant="8" id="6To-M2-6GY"/>
+                                                        <constraint firstItem="QpT-cG-evm" firstAttribute="top" secondItem="MIZ-oz-3za" secondAttribute="top" constant="7" id="9q2-86-90A"/>
+                                                        <constraint firstAttribute="bottom" secondItem="6fk-nn-Otq" secondAttribute="bottom" constant="8" id="Edu-ow-H3C"/>
+                                                        <constraint firstAttribute="height" constant="60" id="Fdj-na-I55"/>
+                                                        <constraint firstAttribute="bottom" secondItem="kGI-NZ-DWd" secondAttribute="bottom" constant="9" id="KXh-sZ-xnx"/>
+                                                        <constraint firstItem="dJL-hs-16e" firstAttribute="top" secondItem="MIZ-oz-3za" secondAttribute="top" constant="8" id="OSZ-B5-2r8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="QpT-cG-evm" secondAttribute="trailing" constant="8" id="YTa-93-ZCM"/>
+                                                        <constraint firstAttribute="width" constant="384" id="mck-m6-eBQ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kGI-NZ-DWd" secondAttribute="trailing" constant="8" id="uX6-8R-WmZ"/>
+                                                        <constraint firstItem="6fk-nn-Otq" firstAttribute="leading" secondItem="MIZ-oz-3za" secondAttribute="leading" constant="8" id="xRX-nd-EVa"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="MIZ-oz-3za" secondAttribute="bottom" constant="5" id="Lk7-Dj-79Q"/>
+                                                <constraint firstItem="MIZ-oz-3za" firstAttribute="leading" secondItem="gx1-hn-B9h" secondAttribute="leading" constant="25" id="YLW-ER-5aT"/>
+                                                <constraint firstItem="MIZ-oz-3za" firstAttribute="top" secondItem="gx1-hn-B9h" secondAttribute="top" constant="5" id="m1R-Nr-Vd7"/>
+                                                <constraint firstAttribute="trailing" secondItem="MIZ-oz-3za" secondAttribute="trailing" constant="25" id="o2O-QE-wfW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <connections>
+                                            <outlet property="borderView" destination="MIZ-oz-3za" id="AIi-DK-DTY"/>
+                                            <outlet property="lblCategory" destination="kGI-NZ-DWd" id="ohY-Aw-yzq"/>
+                                            <outlet property="lblDay" destination="dJL-hs-16e" id="vxs-mG-RyR"/>
+                                            <outlet property="lblHours" destination="QpT-cG-evm" id="DGX-06-bZJ"/>
+                                            <outlet property="lblPollutant" destination="6fk-nn-Otq" id="lnl-az-9GV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dk4-vw-Q7o" id="TYl-RF-1xU"/>
+                                    <outlet property="delegate" destination="dk4-vw-Q7o" id="Eny-ZQ-AzT"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREVIOUS ENTRIES FOR DHAKA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ui1-HN-5HY">
+                                <rect key="frame" x="25" y="462" width="364" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="F2t-s8-qPd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="J87-j6-4a7"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cSl-do-siR" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" constant="25" id="1vx-Yd-h7Q"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="k22-aU-eDg" secondAttribute="trailing" constant="25" id="4gF-uQ-QT9"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="cSl-do-siR" secondAttribute="trailing" constant="25" id="6KE-VT-R13"/>
+                            <constraint firstItem="bCP-Z1-yWW" firstAttribute="top" secondItem="HJV-bn-1Da" secondAttribute="bottom" constant="33" id="8hs-hn-5Iy"/>
+                            <constraint firstItem="HJV-bn-1Da" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" constant="25" id="FnZ-ah-Xdf"/>
+                            <constraint firstItem="wRi-BG-2eZ" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" constant="25" id="Hut-X0-p24"/>
+                            <constraint firstItem="98z-RD-b5F" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" constant="25" id="J3P-Fj-3jM"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="Oh8-as-PpS" secondAttribute="trailing" constant="25" id="JFL-kA-S1A"/>
+                            <constraint firstItem="1Tz-cy-65V" firstAttribute="top" secondItem="HJV-bn-1Da" secondAttribute="bottom" constant="33" id="Lm8-5P-KE0"/>
+                            <constraint firstItem="k22-aU-eDg" firstAttribute="top" secondItem="98z-RD-b5F" secondAttribute="bottom" constant="10" id="MzG-tv-kVe"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="HJV-bn-1Da" secondAttribute="trailing" constant="25" id="Onm-8y-WXa"/>
+                            <constraint firstItem="J5Z-qA-qjC" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" constant="25" id="PhH-Ow-0wu"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="wRi-BG-2eZ" secondAttribute="trailing" constant="25" id="QQQ-8d-iK9"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="IeA-Et-xcQ" secondAttribute="trailing" id="Rgk-Bp-o22"/>
+                            <constraint firstItem="0Wi-yU-Ags" firstAttribute="top" secondItem="bCP-Z1-yWW" secondAttribute="bottom" constant="15" id="U9J-nJ-RNz"/>
+                            <constraint firstItem="1Tz-cy-65V" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" constant="25" id="VL7-0z-1Oc"/>
+                            <constraint firstItem="98z-RD-b5F" firstAttribute="top" secondItem="wRi-BG-2eZ" secondAttribute="bottom" constant="10" id="XU0-6r-or7"/>
+                            <constraint firstItem="IeA-Et-xcQ" firstAttribute="top" secondItem="ui1-HN-5HY" secondAttribute="bottom" constant="20" id="Yd1-9v-4Jz"/>
+                            <constraint firstItem="ouZ-5R-6eu" firstAttribute="top" secondItem="k22-aU-eDg" secondAttribute="bottom" constant="10" id="aHD-DJ-BCV"/>
+                            <constraint firstItem="J5Z-qA-qjC" firstAttribute="top" secondItem="1Tz-cy-65V" secondAttribute="bottom" constant="15" id="afm-X8-gsX"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="bCP-Z1-yWW" secondAttribute="trailing" constant="25" id="d0Q-FZ-fjt"/>
+                            <constraint firstItem="Oh8-as-PpS" firstAttribute="top" secondItem="ouZ-5R-6eu" secondAttribute="bottom" constant="10" id="dhh-WN-jDj"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="ui1-HN-5HY" secondAttribute="trailing" constant="25" id="ebI-kd-pjV"/>
+                            <constraint firstItem="bCP-Z1-yWW" firstAttribute="leading" secondItem="1Tz-cy-65V" secondAttribute="trailing" constant="20" id="gMq-Yc-2a5"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="98z-RD-b5F" secondAttribute="trailing" constant="25" id="hp8-E9-nW0"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="0Wi-yU-Ags" secondAttribute="trailing" constant="25" id="ikZ-tD-Mn5"/>
+                            <constraint firstItem="wRi-BG-2eZ" firstAttribute="top" secondItem="J5Z-qA-qjC" secondAttribute="bottom" constant="40" id="jdh-3c-yp1"/>
+                            <constraint firstItem="J87-j6-4a7" firstAttribute="trailing" secondItem="ouZ-5R-6eu" secondAttribute="trailing" constant="25" id="jyp-8a-jTD"/>
+                            <constraint firstItem="ui1-HN-5HY" firstAttribute="top" secondItem="cSl-do-siR" secondAttribute="bottom" constant="30" id="mGf-cP-Hdt"/>
+                            <constraint firstItem="IeA-Et-xcQ" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" id="nSo-1n-wjB"/>
+                            <constraint firstItem="cSl-do-siR" firstAttribute="top" secondItem="Oh8-as-PpS" secondAttribute="bottom" constant="10" id="nXr-v6-uIc"/>
+                            <constraint firstItem="ouZ-5R-6eu" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" constant="25" id="q4W-Z5-tDd"/>
+                            <constraint firstItem="Oh8-as-PpS" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" constant="25" id="rGd-PN-QwP"/>
+                            <constraint firstItem="ui1-HN-5HY" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" constant="25" id="reR-oA-YLf"/>
+                            <constraint firstItem="HJV-bn-1Da" firstAttribute="top" secondItem="J87-j6-4a7" secondAttribute="top" constant="37" id="shj-ix-3zF"/>
+                            <constraint firstItem="0Wi-yU-Ags" firstAttribute="leading" secondItem="bCP-Z1-yWW" secondAttribute="leading" id="zIq-HA-Q9r"/>
+                            <constraint firstItem="k22-aU-eDg" firstAttribute="leading" secondItem="J87-j6-4a7" secondAttribute="leading" constant="25" id="zU5-mg-qw8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="arQ-W7-DX2">
+                        <barButtonItem key="backBarButtonItem" title="        " id="Bko-uR-SL7"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lblCO" destination="Xla-kV-VUv" id="vlZ-At-fbW"/>
+                        <outlet property="lblCityName" destination="bCP-Z1-yWW" id="qCJ-be-EY8"/>
+                        <outlet property="lblNO2" destination="oDm-C0-m1e" id="iQI-W4-TsJ"/>
+                        <outlet property="lblOzone" destination="8Uf-Th-N5P" id="opH-tW-ho9"/>
+                        <outlet property="lblPM10" destination="gts-a9-O90" id="dUr-jy-PdL"/>
+                        <outlet property="lblPM25" destination="uwA-yi-tqD" id="4JV-Ft-2YN"/>
+                        <outlet property="lblSO2" destination="dlh-nM-PCg" id="MHG-dc-yMU"/>
+                        <outlet property="lblTime" destination="0Wi-yU-Ags" id="mcJ-uL-JxT"/>
+                        <outlet property="lblpreviosCity" destination="ui1-HN-5HY" id="sJe-mA-g95"/>
+                        <outlet property="tableVieww" destination="IeA-Et-xcQ" id="e5u-at-rBF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYZ-bk-k6O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1695.6521739130435" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j8q-oa-l2Y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="agl-r1-3FF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="j0u-WP-XKY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Aem-IL-lgi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XUr-OV-87S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="98.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
